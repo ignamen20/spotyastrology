@@ -1,0 +1,12 @@
+modules = ["python-with-prybar-3.10"]
+run = "python app.py"
+
+[nix]
+channel = "stable-23_11"
+
+[deployment]
+run = ["sh", "-c", "run = [\"python -m venv env\", \"source env/bin/activate\", \"pip install -r requirements.txt\", \"python main.py\"]"]
+
+[[ports]]
+localPort = 8080
+externalPort = 80
